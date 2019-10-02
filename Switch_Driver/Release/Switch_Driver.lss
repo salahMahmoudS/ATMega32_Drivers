@@ -2353,7 +2353,7 @@ Disassembly of section .text:
 00001244 <main>:
     1244:	0e 94 6b 06 	call	0xcd6	; 0xcd6 <DIO_voidInitialize>
     1248:	0e 94 0a 09 	call	0x1214	; 0x1214 <Switch_voidInitialize>
-    124c:	81 e0       	ldi	r24, 0x01	; 1
+    124c:	86 e0       	ldi	r24, 0x06	; 6
     124e:	61 e0       	ldi	r22, 0x01	; 1
     1250:	0e 94 00 09 	call	0x1200	; 0x1200 <DIO_voidWriteOnPin>
     1254:	80 e0       	ldi	r24, 0x00	; 0
