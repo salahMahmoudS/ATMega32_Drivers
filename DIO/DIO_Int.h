@@ -21,6 +21,7 @@ void DIO_voidSetPort(s8 PORT);
 void DIO_voidClearPort(s8 PORT);
 void DIO_voidTogglePort(s8 PORT);
 u8 DIO_uint8PinState(u8 pin);
+void DIO_voidWriteOnPort(s8 PORT,u8 data);
 void DIO_voidDisplayPORT(s8 PORT);
 
 #define DIO_PIN_0 0
