@@ -1,0 +1,144 @@
+
+ADC_Amit.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .text         000000fa  00000000  00000000  00000074  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  1 .bss          00000002  00800060  00800060  0000016e  2**0
+                  ALLOC
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	0c 94 2a 00 	jmp	0x54	; 0x54 <__ctors_end>
+   4:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   8:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+   c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  10:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  14:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  18:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  1c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  20:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  24:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  28:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  2c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  30:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  34:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  38:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  3c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  40:	0c 94 51 00 	jmp	0xa2	; 0xa2 <__vector_16>
+  44:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  48:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  4c:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+  50:	0c 94 3c 00 	jmp	0x78	; 0x78 <__bad_interrupt>
+
+00000054 <__ctors_end>:
+  54:	11 24       	eor	r1, r1
+  56:	1f be       	out	0x3f, r1	; 63
+  58:	cf e5       	ldi	r28, 0x5F	; 95
+  5a:	d4 e0       	ldi	r29, 0x04	; 4
+  5c:	de bf       	out	0x3e, r29	; 62
+  5e:	cd bf       	out	0x3d, r28	; 61
+
+00000060 <__do_clear_bss>:
+  60:	10 e0       	ldi	r17, 0x00	; 0
+  62:	a0 e6       	ldi	r26, 0x60	; 96
+  64:	b0 e0       	ldi	r27, 0x00	; 0
+  66:	01 c0       	rjmp	.+2      	; 0x6a <.do_clear_bss_start>
+
+00000068 <.do_clear_bss_loop>:
+  68:	1d 92       	st	X+, r1
+
+0000006a <.do_clear_bss_start>:
+  6a:	a2 36       	cpi	r26, 0x62	; 98
+  6c:	b1 07       	cpc	r27, r17
+  6e:	e1 f7       	brne	.-8      	; 0x68 <.do_clear_bss_loop>
+  70:	0e 94 78 00 	call	0xf0	; 0xf0 <main>
+  74:	0c 94 7b 00 	jmp	0xf6	; 0xf6 <_exit>
+
+00000078 <__bad_interrupt>:
+  78:	0c 94 00 00 	jmp	0	; 0x0 <__vectors>
+
+0000007c <ADC_voidInitialize>:
+  7c:	3d 9a       	sbi	0x07, 5	; 7
+  7e:	08 95       	ret
+
+00000080 <ADC_voidEnable>:
+  80:	37 9a       	sbi	0x06, 7	; 6
+  82:	08 95       	ret
+
+00000084 <ADC_voidDisable>:
+  84:	37 98       	cbi	0x06, 7	; 6
+  86:	08 95       	ret
+
+00000088 <ADC_voidStartConv>:
+  88:	36 9a       	sbi	0x06, 6	; 6
+  8a:	08 95       	ret
+
+0000008c <ADC_voidIntEnable>:
+  8c:	33 9a       	sbi	0x06, 3	; 6
+  8e:	08 95       	ret
+
+00000090 <ADC_voidIntDisable>:
+  90:	33 98       	cbi	0x06, 3	; 6
+  92:	08 95       	ret
+
+00000094 <ADC_u8GetResult>:
+  94:	85 b1       	in	r24, 0x05	; 5
+  96:	08 95       	ret
+
+00000098 <ADC_voidSetCallBack>:
+  98:	90 93 61 00 	sts	0x0061, r25
+  9c:	80 93 60 00 	sts	0x0060, r24
+  a0:	08 95       	ret
+
+000000a2 <__vector_16>:
+  a2:	1f 92       	push	r1
+  a4:	0f 92       	push	r0
+  a6:	0f b6       	in	r0, 0x3f	; 63
+  a8:	0f 92       	push	r0
+  aa:	11 24       	eor	r1, r1
+  ac:	2f 93       	push	r18
+  ae:	3f 93       	push	r19
+  b0:	4f 93       	push	r20
+  b2:	5f 93       	push	r21
+  b4:	6f 93       	push	r22
+  b6:	7f 93       	push	r23
+  b8:	8f 93       	push	r24
+  ba:	9f 93       	push	r25
+  bc:	af 93       	push	r26
+  be:	bf 93       	push	r27
+  c0:	ef 93       	push	r30
+  c2:	ff 93       	push	r31
+  c4:	e0 91 60 00 	lds	r30, 0x0060
+  c8:	f0 91 61 00 	lds	r31, 0x0061
+  cc:	09 95       	icall
+  ce:	ff 91       	pop	r31
+  d0:	ef 91       	pop	r30
+  d2:	bf 91       	pop	r27
+  d4:	af 91       	pop	r26
+  d6:	9f 91       	pop	r25
+  d8:	8f 91       	pop	r24
+  da:	7f 91       	pop	r23
+  dc:	6f 91       	pop	r22
+  de:	5f 91       	pop	r21
+  e0:	4f 91       	pop	r20
+  e2:	3f 91       	pop	r19
+  e4:	2f 91       	pop	r18
+  e6:	0f 90       	pop	r0
+  e8:	0f be       	out	0x3f, r0	; 63
+  ea:	0f 90       	pop	r0
+  ec:	1f 90       	pop	r1
+  ee:	18 95       	reti
+
+000000f0 <main>:
+  f0:	80 e0       	ldi	r24, 0x00	; 0
+  f2:	90 e0       	ldi	r25, 0x00	; 0
+  f4:	08 95       	ret
+
+000000f6 <_exit>:
+  f6:	f8 94       	cli
+
+000000f8 <__stop_program>:
+  f8:	ff cf       	rjmp	.-2      	; 0xf8 <__stop_program>
