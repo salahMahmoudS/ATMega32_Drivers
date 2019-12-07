@@ -4,10 +4,11 @@
  *  Created on: Apr 24, 2019
  *      Author: salsa
  */
-#include <avr/io.h>
+
 #include <util/delay.h>
 #include "Bit_Math.h"
 #include "std_types.h"
+#include "DIO_Reg.h"
 #include "DIO_priv.h"
 #include "DIO_Config.h"
 #include "DIO_Int.h"
@@ -41,7 +42,6 @@ SET_BIT(PORTD,pin-24);
 	}
 
 }
-
 
 void DIO_voidClearPin(u8 pin){
 	if (pin>=0&&pin<=7){
@@ -189,24 +189,55 @@ return CHECK_BIT(PIND,pin-24);
 
 }
 
-void DIO_voidDisplayPORT(s8 PORT){
-	switch(PORT){
-	case 'a':case 'A':
-		printf("%i,%i,%i,%i,%i,%i,%i,%i\n",DIO_PIN7_DIR,DIO_PIN6_DIR,DIO_PIN5_DIR,DIO_PIN4_DIR,DIO_PIN3_DIR,DIO_PIN2_DIR,DIO_PIN1_DIR,DIO_PIN0_DIR);
-	break;
-	case 'b':case 'B':
-		printf("%i,%i,%i,%i,%i,%i,%i,%i\n",DIO_PIN15_DIR,DIO_PIN14_DIR,DIO_PIN13_DIR,DIO_PIN12_DIR,DIO_PIN11_DIR,DIO_PIN10_DIR,DIO_PIN9_DIR,DIO_PIN8_DIR);
-	break;
-	case 'c':case 'C':
-		printf("%i,%i,%i,%i,%i,%i,%i,%i\n",DIO_PIN23_DIR,DIO_PIN22_DIR,DIO_PIN21_DIR,DIO_PIN20_DIR,DIO_PIN19_DIR,DIO_PIN18_DIR,DIO_PIN17_DIR,DIO_PIN16_DIR);
-	break;
-	case 'd':case 'D':
-		printf("%i,%i,%i,%i,%i,%i,%i,%i\n",DIO_PIN31_DIR,DIO_PIN30_DIR,DIO_PIN29_DIR,DIO_PIN28_DIR,DIO_PIN27_DIR,DIO_PIN26_DIR,DIO_PIN25_DIR, DIO_PIN24_DIR);
-		break;
-	default:
-		printf("PORT NOT FOUND!");
-		return;
-	}
+void DIO_voidWriteOnPort(s8 PORT,u8 data)
+{
+	switch (PORT){
+			case 'a':case 'A':
+				DIO_voidWriteOnPin(DIO_PIN_0, ((data>>0)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_1, ((data>>1)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_2, ((data>>2)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_3, ((data>>3)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_4, ((data>>4)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_5, ((data>>5)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_6, ((data>>6)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_7, ((data>>7)&(0x01)));
+
+
+				break;
+			case 'b':case 'B':
+				DIO_voidWriteOnPin(DIO_PIN_8, ((data>>0)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_9, ((data>>1)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_10, ((data>>2)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_11, ((data>>3)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_12, ((data>>4)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_13, ((data>>5)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_14, ((data>>6)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_15, ((data>>7)&(0x01)));
+					break;
+			case 'c':case 'C':
+				DIO_voidWriteOnPin(DIO_PIN_16, ((data>>0)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_17, ((data>>1)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_18, ((data>>2)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_19, ((data>>3)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_20, ((data>>4)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_21, ((data>>5)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_22, ((data>>6)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_23, ((data>>7)&(0x01)));
+					break;
+			case 'd':case 'D':
+				DIO_voidWriteOnPin(DIO_PIN_24, ((data>>0)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_25, ((data>>1)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_26, ((data>>2)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_27, ((data>>3)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_28, ((data>>4)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_29, ((data>>5)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_30, ((data>>6)&(0x01)));
+				DIO_voidWriteOnPin(DIO_PIN_31, ((data>>7)&(0x01)));
+					break;
+			default:
+				printf("PORT NOT FOUND!");
+				return;
+			}
 }
 
 
