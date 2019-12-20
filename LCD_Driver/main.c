@@ -15,10 +15,15 @@
 int main(void)
 {
 	DIO_voidInitialize();
-	LCD_voidInit();
+	LCD_voidInitialize();
 	LCD_voidSetCursor(0,0);
-	LCD_voidDisplayString("EHH BA2A");
+	LCD_voidDisplayString("Hello World!!");
 
-	while(1);
+
+	while(1)
+	{
+//LCD_voidSendCommand(LCD_COMMAND_SHIFT_DISPLAY_RIGHT);
+//_delay_ms(150);
+	}
 	return 0;
 }
