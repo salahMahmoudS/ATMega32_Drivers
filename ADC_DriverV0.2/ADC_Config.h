@@ -23,7 +23,7 @@ ADCH will contain the 8 MSB and ADCL will contain last 2*/
  * LEFT_ADJUSTED
  * RIGHT_ADJUSTED
  */
-#define ADC_CONVERSION_FORM RIGHT_ADJUSTED
+#define ADC_CONVERSION_FORM LEFT_ADJUSTED
 /*the following configures the analog channel if it will be single ended input (SEI)
 input or differential input (DI) with positive P and negative N bits and a
 gain G

@@ -70,5 +70,7 @@
 #define TIMER_OR_COUNTER1_CAPTURE_EVENT 7
 void ADCI_SetCallBack(void (* ADC_Complete_Interrupt_ptr)(void));
 void __vector_18(void)__attribute((signal,used));
+static void ADC_voidStartConversion(void);
+
 //void ADCI_SetCallBack(void (* ADC_Complete_Interrupt_ptr)(void));
 #endif /* ADC_PRIV_H_ */

@@ -9,7 +9,6 @@
 #define ADC_INT_H_
 
 void ADC_voidInitialize(void);
-void ADC_voidStartConversion(void);
 void ADC_voidClearInterruptFlag(void);
 void ADC_voidChangeReference(u8 reference);
 u8 ADC_u8Convert8bits(void);

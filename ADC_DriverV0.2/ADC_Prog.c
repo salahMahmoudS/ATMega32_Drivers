@@ -417,7 +417,7 @@ CLEAR_BIT(ADCSRA,ADEN);
 }
 
 //this function starts the first but for conversion, supposed to initiate conversion in freerunning mode
-void ADC_voidStartConversion(void)
+static void ADC_voidStartConversion(void)
 {
 	SET_BIT(ADCSRA,ADSC);
 }
