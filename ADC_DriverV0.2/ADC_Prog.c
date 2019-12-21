@@ -719,7 +719,7 @@ u8 ADC_u8Convert8bits(void)
 	return ADCH;
 }
 #endif
-u16 ADC_u16Convert16bits(void) //this function converts in ADC and returns the result in 10 bits mode
+u16 ADC_u16Convert10bits(void) //this function converts in ADC and returns the result in 10 bits mode
 {
 #if (ADC_AUTO_TRIGGER_ENABLE == DISABLED)
 SET_BIT(ADCSRA,ADSC);

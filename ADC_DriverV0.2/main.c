@@ -20,7 +20,7 @@ int main(void)
 
 while(1)
 	{
-	result = ADC_u16Convert16bits();
+	result = ADC_u16Convert10bits();
 	PORTC = (result>>8);
 	PORTD = result;
 
