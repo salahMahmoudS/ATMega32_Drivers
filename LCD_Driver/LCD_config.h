@@ -20,7 +20,7 @@
 #define LCD_TYPE LCD_16_2
 /*If the LCD is connected through 4 pins only then choose MODE_4_BITS
  ***and if it is connected through 8 pins then choose MODE_8_BITS***/
-#define LCD_MODE 		MODE_8_BITS
+#define LCD_MODE 		MODE_4_BITS
 /*Asigning each pin in the LCD to a pin in the uC*/
 #if (LCD_MODE == MODE_8_BITS)
 #define LCD_PIN_0 		DIO_PIN_0

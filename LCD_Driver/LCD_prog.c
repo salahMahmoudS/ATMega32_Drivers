@@ -52,7 +52,7 @@ void LCD_voidInitialize(void)
 	LCD_voidSendCommand(LCD_COMMAND_SET_DISPLAY_ON_CURSOR_ON);
 	_delay_us(100);
 	LCD_voidClearScreenReturnHomePosition();
-
+	_delay_ms(2);
 	LCD_voidSendCommand(LCD_COMMAND_SET_CURSOR_MOTION_RIGHT);
 	_delay_us(100);
 	#else
@@ -85,7 +85,7 @@ _delay_us(100);
 	DIO_voidWriteOnPin(LCD_PIN_6, CHECK_BIT(command,6));
 	DIO_voidWriteOnPin(LCD_PIN_5, CHECK_BIT(command,5));
 	DIO_voidWriteOnPin(LCD_PIN_4, CHECK_BIT(command,4));
-	DIO_voidWriteOnPin(LCD_PIN_WR, LCD_LOW); //Writing mode
+	DIO_voidWriteOnPin(LCD_PIN_RW, LCD_LOW); //Writing mode
 	DIO_voidWriteOnPin(LCD_PIN_RS, LCD_LOW); //LOW to write commands
 	//Give a pulse
 	DIO_voidWriteOnPin(LCD_PIN_ENABLE, LCD_HIGH);
@@ -132,7 +132,7 @@ void LCD_voidDisplayCharacter(u8 data)
 	DIO_voidWriteOnPin(LCD_PIN_6, CHECK_BIT(data,6));
 	DIO_voidWriteOnPin(LCD_PIN_5, CHECK_BIT(data,5));
 	DIO_voidWriteOnPin(LCD_PIN_4, CHECK_BIT(data,4));
-	DIO_voidWriteOnPin(LCD_PIN_WR, LCD_LOW); // Write mode
+	DIO_voidWriteOnPin(LCD_PIN_RW, LCD_LOW); // Write mode
 	DIO_voidWriteOnPin(LCD_PIN_RS, LCD_HIGH);// To write data
 	//Give a pulse
 	DIO_voidWriteOnPin(LCD_PIN_ENABLE, LCD_HIGH);
