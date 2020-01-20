@@ -8,7 +8,8 @@
 #ifndef DIO_PRIV_H_
 #define DIO_PRIV_H_
 
-
+static void DIO_voidSetPin(u8 pin);
+static void DIO_voidClearPin(u8 pin);
 
 #define IN 0
 #define OUT 1

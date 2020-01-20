@@ -11,16 +11,16 @@
 #define DIO_HIGH 1
 #define DIO_LOW  0
 
-void DIO_void_Initialize(void);
-void DIO_void_Set_Pin(u8 pin);
-void DIO_void_Clear_Pin(u8 pin);
-void DIO_void_Set_Port(s8 PORT);
-void DIO_void_Clear_Port(s8 PORT);
-u8 DIO_uint8_Pin_State(u8 test_pin);
-void DIO_void_Display_PORT(s8 PORT);
-void DIO_void_Blink_Pin(u8 pin, u16 time);
-void DIO_void_Toggle_Pin(u8 pin);
-void DIO_Write_On_Pin(u8 pin,u8 value);
+void DIO_voidInitialize(void);
+void DIO_voidWriteOnPin(u8 pin,u8 value);
+void DIO_voidTogglePin(u8 pin);
+void DIO_voidBlinkPin(u8 pin, u16 time);
+void DIO_voidSetPort(s8 PORT);
+void DIO_voidClearPort(s8 PORT);
+void DIO_voidTogglePort(s8 PORT);
+u8 DIO_uint8PinState(u8 pin);
+void DIO_voidWriteOnPort(s8 PORT,u8 data);
+void DIO_voidDisplayPORT(s8 PORT);
 
 #define DIO_PIN_0 0
 #define DIO_PIN_1 1

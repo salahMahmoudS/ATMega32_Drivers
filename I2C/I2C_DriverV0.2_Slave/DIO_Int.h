@@ -12,8 +12,6 @@
 #define DIO_LOW  0
 
 void DIO_voidInitialize(void);
-void DIO_voidSetPin(u8 pin);
-void DIO_voidClearPin(u8 pin);
 void DIO_voidWriteOnPin(u8 pin,u8 value);
 void DIO_voidTogglePin(u8 pin);
 void DIO_voidBlinkPin(u8 pin, u16 time);

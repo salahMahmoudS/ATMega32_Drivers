@@ -8,20 +8,10 @@
 #ifndef DIO_INT_H_
 #define DIO_INT_H_
 
-
 #define DIO_HIGH 1
 #define DIO_LOW  0
 
-#define IS_PRESSED 1
-#define IS_NOT_PRESSED 0
-
-#define SWITCH_0 0
-#define SWITCH_1 1
-#define SWITCH_2 2
-
 void DIO_voidInitialize(void);
-void DIO_voidSetPin(u8 pin);
-void DIO_voidClearPin(u8 pin);
 void DIO_voidWriteOnPin(u8 pin,u8 value);
 void DIO_voidTogglePin(u8 pin);
 void DIO_voidBlinkPin(u8 pin, u16 time);
@@ -29,6 +19,7 @@ void DIO_voidSetPort(s8 PORT);
 void DIO_voidClearPort(s8 PORT);
 void DIO_voidTogglePort(s8 PORT);
 u8 DIO_uint8PinState(u8 pin);
+void DIO_voidWriteOnPort(s8 PORT,u8 data);
 void DIO_voidDisplayPORT(s8 PORT);
 
 #define DIO_PIN_0 0

@@ -21,7 +21,7 @@ DDRD=CONCAT(DIO_PIN31_DIR,DIO_PIN30_DIR,DIO_PIN29_DIR,DIO_PIN28_DIR,DIO_PIN27_DI
 
 }
 
-void DIO_voidSetPin(u8 pin){
+static void DIO_voidSetPin(u8 pin){
 	if (pin>=0&&pin<=7){
 
 SET_BIT(PORTA,pin);
@@ -43,7 +43,7 @@ SET_BIT(PORTD,pin-24);
 
 }
 
-void DIO_voidClearPin(u8 pin){
+static void DIO_voidClearPin(u8 pin){
 	if (pin>=0&&pin<=7){
 
 CLEAR_BIT(PORTA,pin);

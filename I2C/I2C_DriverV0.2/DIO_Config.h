@@ -10,24 +10,24 @@
 
 //PORT A
 #define DIO_PIN0_DIR IN
-#define DIO_PIN1_DIR OUT
-#define DIO_PIN2_DIR OUT
-#define DIO_PIN3_DIR OUT
-#define DIO_PIN4_DIR OUT
-#define DIO_PIN5_DIR OUT
-#define DIO_PIN6_DIR OUT
-#define DIO_PIN7_DIR OUT
+#define DIO_PIN1_DIR IN
+#define DIO_PIN2_DIR IN
+#define DIO_PIN3_DIR IN
+#define DIO_PIN4_DIR IN
+#define DIO_PIN5_DIR IN
+#define DIO_PIN6_DIR IN
+#define DIO_PIN7_DIR IN
 
 
 // PORT B
-#define DIO_PIN8_DIR OUT
-#define DIO_PIN9_DIR OUT
-#define DIO_PIN10_DIR OUT
-#define DIO_PIN11_DIR OUT
-#define DIO_PIN12_DIR OUT
-#define DIO_PIN13_DIR OUT
-#define DIO_PIN14_DIR OUT
-#define DIO_PIN15_DIR OUT
+#define DIO_PIN8_DIR IN
+#define DIO_PIN9_DIR IN
+#define DIO_PIN10_DIR IN
+#define DIO_PIN11_DIR IN
+#define DIO_PIN12_DIR IN
+#define DIO_PIN13_DIR IN
+#define DIO_PIN14_DIR IN
+#define DIO_PIN15_DIR IN
 
 //PORT C
 #define DIO_PIN16_DIR OUT
