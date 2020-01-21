@@ -23,22 +23,22 @@ int main(void){
 	while(1)
 	{
 
-if (DIO_uint8PinState(DIO_PIN_1)==0 &&DIO_u8PinState(DIO_PIN_0)==0 )
+if (DIO_u8PinState(DIO_PIN_1)==0 &&DIO_u8PinState(DIO_PIN_0)==0 )
 {
 	data= 0b00000011;
 }
 
-else if(DIO_u8_Pin_State(DIO_PIN_1)==0&&DIO_u8_Pin_State(DIO_PIN_0)==1)
+else if(DIO_u8PinState(DIO_PIN_1)==0&&DIO_u8PinState(DIO_PIN_0)==1)
 {
 	data= 0b00000010;
 }
 
-else if(DIO_u8_Pin_State(DIO_PIN_1)==1 &&DIO_u8_Pin_State(DIO_PIN_0)==0)
+else if(DIO_u8PinState(DIO_PIN_1)==1 &&DIO_u8PinState(DIO_PIN_0)==0)
 {
 	data= 0b00000001;
 }
 
-else if(DIO_u8_Pin_State(DIO_PIN_1)==1 && DIO_u8_Pin_State(DIO_PIN_0)==1)
+else if(DIO_u8PinState(DIO_PIN_1)==1 && DIO_u8PinState(DIO_PIN_0)==1)
 {
 	data= 0b00000000;
 }

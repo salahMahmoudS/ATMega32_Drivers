@@ -9,6 +9,9 @@
 #define SWITCH_1 1
 #define SWITCH_2 2
 
+#define SWITCH_IS_PRESSED 1
+#define SWITCH_IS_NOT_PRESSED 0
+
 void Switch_voidInitialize(void);
 u8 Switch_u8IsPressed(u8 Switch_number);
 

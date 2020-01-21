@@ -8,7 +8,7 @@ int main(void){
 	Switch_voidInitialize();
 DIO_voidWriteOnPin(DIO_PIN_6,DIO_HIGH); //Activate pullup resistor in pin6 the microcontroller that is connected to switch
 	while (1){
-		if (Switch_u8IsPressed(SWITCH_0) == IS_PRESSED){
+		if (Switch_u8IsPressed(SWITCH_0) == SWITCH_IS_PRESSED){
 			DIO_voidWriteOnPin(DIO_PIN_1,DIO_HIGH); //light led if switch is pressed
 		}
 		else {

@@ -1802,51 +1802,51 @@ Disassembly of section .text:
      df8:	0f 90       	pop	r0
      dfa:	08 95       	ret
 
-00000dfc <DIO_uint8PinState>:
+00000dfc <DIO_u8PinState>:
      dfc:	48 2f       	mov	r20, r24
      dfe:	88 30       	cpi	r24, 0x08	; 8
-     e00:	40 f4       	brcc	.+16     	; 0xe12 <DIO_uint8PinState+0x16>
+     e00:	40 f4       	brcc	.+16     	; 0xe12 <DIO_u8PinState+0x16>
      e02:	89 b3       	in	r24, 0x19	; 25
      e04:	90 e0       	ldi	r25, 0x00	; 0
-     e06:	02 c0       	rjmp	.+4      	; 0xe0c <DIO_uint8PinState+0x10>
+     e06:	02 c0       	rjmp	.+4      	; 0xe0c <DIO_u8PinState+0x10>
      e08:	95 95       	asr	r25
      e0a:	87 95       	ror	r24
      e0c:	4a 95       	dec	r20
-     e0e:	e2 f7       	brpl	.-8      	; 0xe08 <DIO_uint8PinState+0xc>
-     e10:	22 c0       	rjmp	.+68     	; 0xe56 <DIO_uint8PinState+0x5a>
+     e0e:	e2 f7       	brpl	.-8      	; 0xe08 <DIO_u8PinState+0xc>
+     e10:	22 c0       	rjmp	.+68     	; 0xe56 <DIO_u8PinState+0x5a>
      e12:	88 50       	subi	r24, 0x08	; 8
      e14:	88 30       	cpi	r24, 0x08	; 8
-     e16:	30 f4       	brcc	.+12     	; 0xe24 <DIO_uint8PinState+0x28>
+     e16:	30 f4       	brcc	.+12     	; 0xe24 <DIO_u8PinState+0x28>
      e18:	26 b3       	in	r18, 0x16	; 22
      e1a:	30 e0       	ldi	r19, 0x00	; 0
      e1c:	84 2f       	mov	r24, r20
      e1e:	90 e0       	ldi	r25, 0x00	; 0
      e20:	08 97       	sbiw	r24, 0x08	; 8
-     e22:	13 c0       	rjmp	.+38     	; 0xe4a <DIO_uint8PinState+0x4e>
+     e22:	13 c0       	rjmp	.+38     	; 0xe4a <DIO_u8PinState+0x4e>
      e24:	84 2f       	mov	r24, r20
      e26:	80 51       	subi	r24, 0x10	; 16
      e28:	88 30       	cpi	r24, 0x08	; 8
-     e2a:	30 f4       	brcc	.+12     	; 0xe38 <DIO_uint8PinState+0x3c>
+     e2a:	30 f4       	brcc	.+12     	; 0xe38 <DIO_u8PinState+0x3c>
      e2c:	23 b3       	in	r18, 0x13	; 19
      e2e:	30 e0       	ldi	r19, 0x00	; 0
      e30:	84 2f       	mov	r24, r20
      e32:	90 e0       	ldi	r25, 0x00	; 0
      e34:	40 97       	sbiw	r24, 0x10	; 16
-     e36:	09 c0       	rjmp	.+18     	; 0xe4a <DIO_uint8PinState+0x4e>
+     e36:	09 c0       	rjmp	.+18     	; 0xe4a <DIO_u8PinState+0x4e>
      e38:	84 2f       	mov	r24, r20
      e3a:	88 51       	subi	r24, 0x18	; 24
      e3c:	89 30       	cpi	r24, 0x09	; 9
-     e3e:	68 f4       	brcc	.+26     	; 0xe5a <DIO_uint8PinState+0x5e>
+     e3e:	68 f4       	brcc	.+26     	; 0xe5a <DIO_u8PinState+0x5e>
      e40:	20 b3       	in	r18, 0x10	; 16
      e42:	30 e0       	ldi	r19, 0x00	; 0
      e44:	84 2f       	mov	r24, r20
      e46:	90 e0       	ldi	r25, 0x00	; 0
      e48:	48 97       	sbiw	r24, 0x18	; 24
-     e4a:	02 c0       	rjmp	.+4      	; 0xe50 <DIO_uint8PinState+0x54>
+     e4a:	02 c0       	rjmp	.+4      	; 0xe50 <DIO_u8PinState+0x54>
      e4c:	35 95       	asr	r19
      e4e:	27 95       	ror	r18
      e50:	8a 95       	dec	r24
-     e52:	e2 f7       	brpl	.-8      	; 0xe4c <DIO_uint8PinState+0x50>
+     e52:	e2 f7       	brpl	.-8      	; 0xe4c <DIO_u8PinState+0x50>
      e54:	82 2f       	mov	r24, r18
      e56:	81 70       	andi	r24, 0x01	; 1
      e58:	08 95       	ret

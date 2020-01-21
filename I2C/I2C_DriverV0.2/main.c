@@ -39,7 +39,7 @@ u8 status = -1;
 
 while (1)
 {
-	if (DIO_uint8PinState(DIO_PIN_0) == DIO_LOW)
+	if (DIO_u8PinState(DIO_PIN_0) == DIO_LOW)
 		{
 			status =I2C_u8SendStartBit();
 			DIO_voidWriteOnPin(8, DIO_HIGH);

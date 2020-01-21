@@ -306,9 +306,9 @@ LOAD c:/winavr-20100110/bin/../lib/gcc/avr/4.3.3/avr5\libgcc.a
  .text.DIO_voidSetPort
                 0x00000d9e       0x5e ./DIO_prog.o
                 0x00000d9e                DIO_voidSetPort
- .text.DIO_uint8PinState
+ .text.DIO_u8PinState
                 0x00000dfc       0x6a ./DIO_prog.o
-                0x00000dfc                DIO_uint8PinState
+                0x00000dfc                DIO_u8PinState
  .text.DIO_voidTogglePin
                 0x00000e66       0x96 ./DIO_prog.o
                 0x00000e66                DIO_voidTogglePin

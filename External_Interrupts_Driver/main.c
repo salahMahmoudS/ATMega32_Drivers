@@ -14,11 +14,11 @@
 
 u8 is_pressed=0;
 void ExtI_voidISR(void){
-	if (DIO_uint8PinState(26)== DIO_HIGH){
-		DIO_voidSetPin(30);
+	if (DIO_u8PinState(DIO_PIN_26)== DIO_HIGH){
+		DIO_voidWriteOnPin(DIO_PIN_30,DIO_HIGH);
 	}
-	else if (DIO_uint8PinState(26) == DIO_LOW){
-		DIO_voidClearPin(30);
+	else if (DIO_u8PinState(DIO_PIN_26) == DIO_LOW){
+		DIO_voidWriteOnPin(DIO_PIN_30,DIO_LOW);
 	}
 
 
@@ -30,7 +30,7 @@ int main(void){
 	DIO_voidInitialize();
 	GI_voidEnableGlobalInterrupt();
 	 ExtI_voidInitialize();
-	DIO_voidSetPin(24);
+	DIO_voidWriteOnPin(DIO_PIN_24,DIO_HIGH);
 	 ExtI_voidSetCallBack(ExtI_voidISR);
 	 ExtI_voidEnableExtI0();
 
