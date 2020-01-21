@@ -23,7 +23,7 @@ u8 pin5 =29;
 u8 pin6 =30;
 u8 pin7 =31;
 DIO_voidSetPort('D');
-if (DIO_uint8PinState(pin0) == DIO_LOW)
+if (DIO_u8PinState(pin0) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin0-8,DIO_HIGH);
 }
@@ -31,7 +31,7 @@ else
 {
 	DIO_voidWriteOnPin(pin0-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin1) == DIO_LOW)
+if (DIO_u8PinState(pin1) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin1-8,DIO_HIGH);
 }
@@ -39,7 +39,7 @@ else
 {
 	DIO_voidWriteOnPin(pin1-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin2) == DIO_LOW)
+if (DIO_u8PinState(pin2) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin2-8,DIO_HIGH);
 }
@@ -47,7 +47,7 @@ else
 {
 	DIO_voidWriteOnPin(pin2-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin3) == DIO_LOW)
+if (DIO_u8PinState(pin3) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin3-8,DIO_HIGH);
 }
@@ -55,7 +55,7 @@ else
 {
 	DIO_voidWriteOnPin(pin3-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin4) == DIO_LOW)
+if (DIO_u8PinState(pin4) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin4-8,DIO_HIGH);
 }
@@ -63,7 +63,7 @@ else
 {
 	DIO_voidWriteOnPin(pin4-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin5) == DIO_LOW)
+if (DIO_u8PinState(pin5) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin5-8,DIO_HIGH);
 }
@@ -71,7 +71,7 @@ else
 {
 	DIO_voidWriteOnPin(pin5-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin6) == DIO_LOW)
+if (DIO_u8PinState(pin6) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin6-8,DIO_HIGH);
 }
@@ -79,7 +79,7 @@ else
 {
 	DIO_voidWriteOnPin(pin6-8,DIO_LOW);
 }
-if (DIO_uint8PinState(pin7) == DIO_LOW)
+if (DIO_u8PinState(pin7) == DIO_LOW)
 {
 	DIO_voidWriteOnPin(pin7-8,DIO_HIGH);
 }

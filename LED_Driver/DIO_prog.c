@@ -166,7 +166,7 @@ void DIO_voidTogglePort(s8 PORT){
 		}
 }
 
-u8 DIO_uint8PinState(u8 pin){
+u8 DIO_u8PinState(u8 pin){
 	if (pin>=0&&pin<=7){
 
 return CHECK_BIT(PINA,pin);

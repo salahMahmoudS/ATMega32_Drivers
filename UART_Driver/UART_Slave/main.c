@@ -1,4 +1,4 @@
-/*
+/*slave main file
  * main.c
  *
  *  Created on: Jun 1, 2019
@@ -17,7 +17,7 @@ int main(void)
 {
 	u8 data= 0x00;
 	DIO_voidInitialize();
-	LCD_voidInit();
+	LCD_voidInitialize();
 	UART_voidInit();
 LCD_voidSetCursor(0,0);
 LCD_voidDisplayInteger(data);
@@ -28,7 +28,7 @@ LCD_voidDisplayInteger(data);
 		u8 dataNew= UART_voidReceive();
 		if (dataNew !=data)
 		{
-		LCD_voidClearScreen();
+		LCD_voidClearScreenReturnHomePosition();
 		data=dataNew;
 		LCD_voidSetCursor(0,0);
 		LCD_voidDisplayInteger(data);
