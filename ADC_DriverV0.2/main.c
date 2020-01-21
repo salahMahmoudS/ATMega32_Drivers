@@ -8,21 +8,19 @@
 #include "Bit_Math.h"
 #include "GI_Int.h"
 #include "ADC_Int.h"
-#include "avr/io.h"
 int main(void)
 {
-	DDRD = 0xFF;
-	DDRC= 0xFF;
+
 	ADC_voidInitialize();
-	ADC_voidStartConversion();
+	DIO_voidInitialize();
 	u16 result=0x00;
 
 
 while(1)
 	{
 	result = ADC_u16Convert10bits();
-	PORTC = (result>>8);
-	PORTD = result;
+	DIO_voidWriteOnPort('C',(result>>8) );
+	DIO_voidWriteOnPort('D', result);
 
 
 	}
