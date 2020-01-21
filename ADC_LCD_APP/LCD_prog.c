@@ -169,13 +169,13 @@ void LCD_voidDisplayString(s8 *data)
 void LCD_voidClearScreenReturnHomePosition()
 {
 	LCD_voidSendCommand(0x01);
-	_delay_ms(20);
+	_delay_ms(2);
 }
 
 void LCD_voidReturnHomePosition()
 {
 	LCD_voidSendCommand(0x02);
-	_delay_ms(20);
+	_delay_ms(2);
 }
 void LCD_voidSetCursor(u8 Row, u8 Column)
 {
@@ -214,25 +214,7 @@ u8 firstAddressPositionsTable[] = {0x80,0xC0};
 
 void LCD_voidDisplayInteger(u16 data)
 {
-	u16 i=1;
-	if (data<10)
-	{
-		i=1;
-	}
-	else if (data<100)
-	{
-		i=10;
-	}
-	else if (data<1000)
-	{
-		i=100;
-	}
-	else
-	{
-		i=1000;
-	}
-
-	for(; i >= 1; i/=10)
+	for(u16 i = 1000; i >= 1; i/=10)
 	{
 		LCD_voidDisplayCharacter(48+(data/i));
 		data = data % i;

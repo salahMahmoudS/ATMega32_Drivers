@@ -13,23 +13,31 @@
 #include "ADC_Int.h"
 #include "LCD_int.h"
 
+u16 static resultOld=0;
+u16 static result = 0;
+void ADC_ISR(void)
+{
+	if (result!=resultOld)
+			{
+				LCD_voidClearScreenReturnHomePosition();
+				LCD_voidDisplayInteger(result);
+				resultOld = result;
+			}
+
+}
 int main(void)
 {
+	GI_voidInitiazlize();
 	DIO_voidInitialize();
 	LCD_voidInitialize();
 	ADC_voidInitialize();
-
+	GI_voidEnableGlobalInterrupt();
+ADC_SetCallBack(ADC_ISR);
 	//LCD_voidDisplayInteger(1000);
-u16 resultOld=0;
+	//LCD_voidDisplayString("Hello world!");
 	while(1)
 	{
-		u16 result=ADC_u16Convert10bits();
-		if (result!=resultOld)
-		{
-			LCD_voidClearScreenReturnHomePosition();
-			LCD_voidDisplayInteger(result);
-			resultOld = result;
-		}
+		result=ADC_u16Convert10bits();
 
 
 	}

@@ -297,13 +297,7 @@ CLEAR_BIT(ADCSRA,ADATE);
 #if(ADC_INTERRUPT_ENABLE == ENABLED)
 SET_BIT(ADCSRA,ADIE);
 
-void ADCI_SetCallBack(void (* ADC_Complete_Interrupt_ptr)(void)){
-	ADCINT_ptr = ADC_Complete_Interrupt_ptr;
-}
 
-void __vector_18(void) {
-	ADCINT_ptr();
-}
 
 #elif (ADC_INTERRUPT_ENABLE == DISABLED)
 CLEAR_BIT(ADCSRA,ADIE);
@@ -740,3 +734,18 @@ return (result | ADCH<<2);
 
 return 0;
 }
+
+#if (ADC_INTERRUPT_ENABLE == ENABLED)
+void ADC_SetCallBack(void (* ADC_Complete_Interrupt_ptr)(void)){
+	ADCINT_ptr = ADC_Complete_Interrupt_ptr;
+}
+void __vector_16(void)__attribute((signal,used));
+void __vector_16(void) {
+	ADCINT_ptr();
+}
+#elif (ADC_INTERRUPT_ENABLE == DISABLED)
+
+
+#else
+#error "Wrong ADC_INTERRUPT_ENABLE mode selected, please select ENABLED or DISABLED"
+#endif

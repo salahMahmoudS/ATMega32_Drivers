@@ -13,4 +13,7 @@ void ADC_voidClearInterruptFlag(void);
 void ADC_voidChangeReference(u8 reference);
 u8 ADC_u8Convert8bits(void);
 u16 ADC_u16Convert10bits(void);
+void ADC_SetCallBack(void (* ADC_Complete_Interrupt_ptr)(void));
+
+
 #endif /* ADC_INT_H_ */

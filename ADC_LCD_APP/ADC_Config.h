@@ -83,7 +83,7 @@ gain G
  * ENABLED
  * DISABLED
  */
-#define ADC_INTERRUPT_ENABLE DISABLED
+#define ADC_INTERRUPT_ENABLE ENABLED
 
 //The following configuration allows you to choose the factor between the XTAL frequency and the
 //input clock to the ADC
