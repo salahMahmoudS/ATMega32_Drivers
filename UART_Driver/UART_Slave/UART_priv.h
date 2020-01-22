@@ -20,8 +20,8 @@
 #define CHAR_SIZE_9				4
 
 /*UART MODE*/
-#define Asynch_OP				0
-#define Synch_OP				1
+#define ASYNCHRONOUS_OPERATION				0
+#define SYNCHRONOUS_OPERATION				1
 
 /*stop bit*/
 #define STOP_1					0
@@ -32,25 +32,8 @@
 #define PARITY_EVEN 			(u8)2
 #define PARITY_ODD 				(u8)3
 
-/*UCSRA*/
-#define U2X						1
-#define UDRE					5
-#define TXC						6
-#define RXC						7
-/*UCSRB*/
-#define RXCIE					7
-#define TXCIE					6
-#define UDRIE					5
-#define RXEN					4
-#define TXEN					3
-#define UCSZ2					2
-/*UCSRC*/
-#define URSEL					7
-#define UMSEL					6
-#define UPM1					5
-#define UPM0					4
-#define USBS					3
-#define UCSZ1					2
-#define UCSZ0					1
+
+
+
 
 #endif
