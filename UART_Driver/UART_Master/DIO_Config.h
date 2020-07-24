@@ -20,9 +20,9 @@
 
 
 // PORT B
-#define DIO_PIN8_DIR IN
-#define DIO_PIN9_DIR IN
-#define DIO_PIN10_DIR IN
+#define DIO_PIN8_DIR OUT
+#define DIO_PIN9_DIR OUT
+#define DIO_PIN10_DIR OUT
 #define DIO_PIN11_DIR IN
 #define DIO_PIN12_DIR IN
 #define DIO_PIN13_DIR IN
@@ -42,14 +42,14 @@
 
 // PORT D
 #define DIO_PIN24_DIR IN
-#define DIO_PIN25_DIR IN
-#define DIO_PIN26_DIR IN
-#define DIO_PIN27_DIR IN
-#define DIO_PIN28_DIR IN
-#define DIO_PIN29_DIR IN
-#define DIO_PIN30_DIR IN
-#define DIO_PIN31_DIR IN
-#define DIO_PIN32_DIR IN
+#define DIO_PIN25_DIR OUT
+#define DIO_PIN26_DIR OUT
+#define DIO_PIN27_DIR OUT
+#define DIO_PIN28_DIR OUT
+#define DIO_PIN29_DIR OUT
+#define DIO_PIN30_DIR OUT
+#define DIO_PIN31_DIR OUT
+#define DIO_PIN32_DIR OUT
 
 
 

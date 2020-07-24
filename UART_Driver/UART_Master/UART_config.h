@@ -28,7 +28,7 @@
  * ENABLE
  * DISABLE
  */
-#define DATE_REG_EMPTY_INTERRUPT_ENABLE		DISABLE
+#define DATA_REG_EMPTY_INTERRUPT_ENABLE		ENABLE
 
 /*
  * The below mode allows the UART to enable transmitting bits. choose between
@@ -65,7 +65,7 @@
  *PARITY_EVEN
  *PARITY_ODD
  */
-#define PARITY_SELECT						PARITY_EVEN
+#define PARITY_SELECT						PARITY_DISABLED
 
 /*
  * The following allows you to select number of stop bits to be sent to the slave, select between
@@ -81,6 +81,7 @@
  * BR_14_4K
  * BR_115_2K
  * BR_250K
+ * BR_1M
  * BR_2400X2
  * BR_4800X2
  * BR_9600X2

@@ -16,6 +16,8 @@
 #define RXEN					4
 #define TXEN					3
 #define UCSZ2					2
+#define RXB8					1
+#define TXB8					0
 
 #define UCSRC   *((volatile u8*) 0x40)
 /*UCSRC*/
