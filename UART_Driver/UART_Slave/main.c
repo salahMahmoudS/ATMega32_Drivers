@@ -14,10 +14,13 @@
 #include "LCD_int.h"
 #include "UART_init.h"
 
-
-UARTRxComplete_ISR(void)
+void UARTRxComplete_ISR(void)
 {
-
+	u8 data= UART_voidReceive();
+	DIO_voidWriteOnPort('C', data);
+	LCD_voidClearScreenReturnHomePosition();
+	LCD_voidSetCursor(0,0);
+	LCD_voidDisplayInteger(data);
 }
 
 
@@ -25,26 +28,29 @@ int main(void)
 {
 	u8 data= 0x00;
 
-	//GI_voidInitiazlize();
-	//GI_voidEnableGlobalInterrupt();
 	DIO_voidInitialize();
+	GI_voidInitiazlize();
+	GI_voidEnableGlobalInterrupt();
 	LCD_voidInitialize();
 	UART_voidInit();
+	voidUARTRxComplete_SetCallBack(UARTRxComplete_ISR);
+	LCD_voidSetCursor(0,0);
+	LCD_voidDisplayInteger(data);
 
-LCD_voidSetCursor(0,0);
-LCD_voidDisplayInteger(data);
-void voidUARTRxComplete_SetCallBack(UARTRxComplete_ISR);
+
+
+//void voidUARTRxComplete_SetCallBack(UARTRxComplete_ISR);
 
 
 
 	while(1)
 	{
-
-		//DIO_voidSetPin(0);
+		/*
 		u8 data= UART_voidReceive();
 			LCD_voidClearScreenReturnHomePosition();
 			LCD_voidSetCursor(0,0);
 			LCD_voidDisplayInteger(data);
+		 */
 
 	}
 		/**/

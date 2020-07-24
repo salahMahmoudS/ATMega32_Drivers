@@ -75,6 +75,8 @@ if (DIO_u8PinState(DIO_PIN_2)== DIO_LOW&&isPressedNew !=isPressedOld)
 	}
 
 	UART_voidSend(data);
+	DIO_voidWriteOnPin(DIO_PIN_8, DIO_u8PinState(DIO_PIN_0));
+	DIO_voidWriteOnPin(DIO_PIN_9, DIO_u8PinState(DIO_PIN_1));
 
 	isPressedOld = isPressedNew;
 

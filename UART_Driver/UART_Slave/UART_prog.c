@@ -153,7 +153,7 @@ void UART_voidSend(u8 Data) {
 	UDR = Data;
 
 
-#if (TX_INTERRUPT_ENABLE ==	DISBLE)
+#if (TX_INTERRUPT_ENABLE ==	DISABLE)
 	SET_BIT(UCSRA,TXC);
 #endif
 
@@ -178,6 +178,7 @@ u8 UART_voidReceive(void) {
 
 	return UDR;
 }
+
 
 void voidUARTRxComplete_SetCallBack(void (*RxCompleteInterrupt_ptr)(void)) {
 	RxComplete_INT_ptr = RxCompleteInterrupt_ptr;
@@ -209,4 +210,5 @@ void __vector_15(void) {
 	DIO_voidTogglePin(DIO_PIN_31);
 	TxComplete_INT_ptr();
 }
+
 

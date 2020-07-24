@@ -14,7 +14,8 @@
  * ENABLE
  * DISABLE
  */
-#define RX_INTERRUPT_ENABLE					DISABLE
+#define RX_INTERRUPT_ENABLE					ENABLE
+
 
 /*
  * The below mode controls generating an interrupt when transmitting is complete., choose between
