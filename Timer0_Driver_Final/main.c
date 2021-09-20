@@ -26,10 +26,10 @@ int main(void){
 GI_voidInitiazlize();
 DIO_voidInitialize();
 GI_voidEnableGlobalInterrupt();
-Timer0_voidInitialize();
-Timer0_voidEnableOverFlowInterrupt();
-Timer0_voidTimerBegin();
-Timer0_SetCallBack(Timer_overFlow);
+TIMER_init();
+TIMER_voidEnableOverFlowInterrupt();
+TIMER_start();
+TIMER_SetCallBack(Timer_overFlow);
 while(1);
 return 0;
 }

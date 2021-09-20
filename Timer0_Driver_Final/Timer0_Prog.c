@@ -14,7 +14,7 @@
 static volatile void (* Timer0_INT_ptr) (void);
 u8 over_flow_counter =0;
 
-void Timer0_voidInitialize(void){
+void TIMER_init(void){
 
 
 #if (OPERATING_MODE == NORMAL_MODE)
@@ -111,28 +111,28 @@ SET_BIT(TCCR0,CS02);
 #endif
 
 }
-void Timer0_voidTimerBegin(void){
+void TIMER_init(void){
 	TCNT0 = 0x00;
 }
-void Timer0_voidForceOutPutCompareMode(void){
+void TIMER_voidForceOutPutCompareMode(void){
 	SET_BIT(TCCR0,FOC0);
 }
-void Timer0_voidEnableOutputCompareInterrupt(void){
+void TIMER_voidEnableOutputCompareInterrupt(void){
 SET_BIT(TIMSK,OCIE0);
 }
-void Timer0_voidEnableOverFlowInterrupt(void){
+void TIMER_voidEnableOverFlowInterrupt(void){
 	SET_BIT(TIMSK,TOIE0);
 }
-void Timer0_WriteInTCNT0(u8 time){
+void TIMER_WriteInTCNT0(u8 time){
 	TCNT0 = time;
 }
-void Timer0_WriteInOCR0(u8 value){
+void TIMER_WriteInOCR0(u8 value){
 	OCR0 = value;
 }
 
 #if(OPERATING_MODE == NORMAL_MODE)
 
-void Timer0_SetCallBack(void (* TimerInterrupt_ptr)(void)){
+void TIMER_SetCallBack(void (* TimerInterrupt_ptr)(void)){
 	Timer0_INT_ptr = TimerInterrupt_ptr;
 }
 
